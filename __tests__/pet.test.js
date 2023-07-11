@@ -1,4 +1,4 @@
-const Pet = require('./src/pet');
+const Pet = require('../src/pet');
 
 describe('constructor', () => {
   it('returns an object', () => {
@@ -53,5 +53,14 @@ describe('walk', () => {
     pet.walk();
 
     expect(pet.fitness).toEqual(10);
+  });
+});
+
+describe('feed', () =>{
+  it('decreases hunger by 3 to a minimum of 0',() => {
+    const pet = new Pet ('fido');
+    pet.hunger = 3;
+    pet.feed();
+    expect(pet.hunger).toBe(0);
   });
 });

@@ -11,12 +11,20 @@ function Pet(name) {
         this.fitness -= 3;
 };
 Pet.prototype.walk = function() {
-    if((this.fitness+=4)<= MAXIMUM_FITNESS){
+    if((this.fitness + 4)<= MAXIMUM_FITNESS){
         this.fitness+=4;
     } else {
         this.fitness = MAXIMUM_FITNESS;
     };
 };
+    
+Pet.prototype.feed = function() {
+        if((this.hunger - 3) >=1){
+            this.hunger -=3;
+        } else {
+            this.hunger = 0;
+        };
+    };
 
 
 module.exports = Pet;
