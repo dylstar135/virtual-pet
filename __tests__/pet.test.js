@@ -64,3 +64,38 @@ describe('feed', () =>{
     expect(pet.hunger).toBe(0);
   });
 });
+
+describe('checkup', () => {
+  it ('returns i need a walk if pet fitness is <=3, i am hungry if pet hunger >=5, i am hungry and need a walk if both statementrs are true, and im great if neither are true',() => {
+   const pet = new Pet('Fido');
+   pet.fitness = 3;
+    expect(pet.checkup()).toEqual('i need a walk');
+  });
+});
+
+describe('checkup', () => {
+  it ('returns i need a walk if pet fitness is <=3, i am hungry if pet hunger >=5, i am hungry and need a walk if both statementrs are true, and im great if neither are true',() => {
+   const pet = new Pet('Fido');
+   pet.hunger = 5;
+   expect(pet.checkup()).toEqual('i am hungry');
+  });
+});
+
+describe('checkup', () => {
+  it ('returns i need a walk if pet fitness is <=3, i am hungry if pet hunger >=5, i am hungry and need a walk if both statementrs are true, and im great if neither are true',() => {
+   const pet = new Pet('Fido');
+   pet.hunger = 5;
+   pet.fitness = 3;
+   expect(pet.checkup()).toEqual('i am hungry and i need a walk');
+  });
+});
+
+
+describe('checkup', () => {
+  it ('returns i need a walk if pet fitness is <=3, i am hungry if pet hunger >=5, i am hungry and need a walk if both statementrs are true, and im great if neither are true',() => {
+   const pet = new Pet('Fido');
+   pet.hunger = 1;
+   pet.fitness = 8;
+   expect(pet.checkup()).toEqual('i feel great');
+  });
+});
