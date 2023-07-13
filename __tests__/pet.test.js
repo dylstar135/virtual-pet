@@ -164,3 +164,12 @@ describe('feed', () => {
           expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(');
         });
       });
+
+      describe('adoptChild', () => {
+        it('returns a parent and child object', ()=> {
+          const parent = new Pet('Mika');
+          const child = new Pet ('BooBoo');
+          expect (new Pet('Mika')).toBeInstanceOf(Pet);
+          expect(new Pet ('BooBoo')).toBeInstanceOf(Pet);
+        });
+      });
